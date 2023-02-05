@@ -21,15 +21,33 @@ function takeOrder (orderNum, deliveryOrders) {
   }
   return deliveryOrders;
 }
-    
+
+function listItems (deliveryOrders) {
+ //items = deliveryOrders[i].item
+  var items = []
+ for (var i = 0; i < deliveryOrders.length; i++) {
+   items.push(deliveryOrders[i].item)
+  }
+  return items.join(', ')
+}
+  
+function searchOrder (deliveryOrders, itemName) {
+ console.log(deliveryOrders)
+ for (var i = 0; i < deliveryOrders.length; i++) 
+ if (deliveryOrders[i].item === itemName) {
+ return true
+}
+return false
+}
+
 
 
 
 
 
 module.exports = {
-   takeOrder,
+  takeOrder,
   refundOrder,
-  // listItems,
-  // searchOrder
+  listItems,
+  searchOrder
 }
