@@ -32,7 +32,7 @@ function listItems (deliveryOrders) {
 }
   
 function searchOrder (deliveryOrders, itemName) {
- console.log(deliveryOrders)
+ //console.log(deliveryOrders)
  for (var i = 0; i < deliveryOrders.length; i++) 
  if (deliveryOrders[i].item === itemName) {
  return true
