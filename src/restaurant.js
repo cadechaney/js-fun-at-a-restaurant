@@ -31,7 +31,18 @@ function addMenuItem(restaurant, foodItem) {
 }
 
 function removeMenuItem (restaurant, foodItem, foodType) {
-  for ()
+  if (restaurant.menus[foodType].length > 0) {
+    for (var i = 0; i <= restaurant.menus[foodType].length; i++) {
+    if (restaurant.menus[foodType][i].name === foodItem) {
+       restaurant.menus[foodType].splice(i, 1)
+       var nobodyEating = (`No one is eating our ${foodItem} - it has been removed from the ${foodType} menu!`)
+    return nobodyEating
+      }
+    }
+} else {
+  var notSelling = (`Sorry, we don't sell ${foodItem}, try adding a new recipe!`)
+  return notSelling
+}
 }
 
 
